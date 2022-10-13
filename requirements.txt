@@ -1,0 +1,7 @@
+timm==0.3.2
+omegaconf==2.1.2
+Pillow
+matplotlib
+einops
+scipy
+opencv-python

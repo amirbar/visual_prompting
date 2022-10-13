@@ -1,0 +1,7 @@
+__pycache__/*
+output/*
+output_dir/*
+util/__pycache__/*
+evalaute/__pycache__/*
+slurm*
+wandb/*
