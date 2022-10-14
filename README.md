@@ -45,6 +45,10 @@ python -m torch.distributed.launch --nproc_per_node=8 python main_pretrain.py --
 
 ## Evaluation
 
+### Dataset preparation:
+
+Our evaluation pipeline is based on [Volumetric Aggregation Transformer](https://github.com/Seokju-Cho/Volumetric-Aggregation-Transformer). Please follow the dataset preparation steps for PASCAL-5i dataset in this repository. 
+
 ### Evaluate on Foreground Segm on Pascal 5i on split [0-3]:
 ```
 cd evaluate && python evaluate_segmentation.py \
@@ -99,5 +103,5 @@ The script will save a log.txt file with the results as well as results visualiz
 # Pretrained Models
 | Model             | Pretraining | Epochs | Link |
 |-------------------|-------------|--------|------|
-| MAE-VQGAN (ViT-L) | CVF         | 1000   |  (link)[]    |
-| MAE-VQGAN (ViT-L) | CVF + IN    | 3400   |   (link)[]   |
+| MAE-VQGAN (ViT-L) | CVF         | 1000   |  (link)[https://drive.google.com/file/d/1Xe0-cypS4dcwqbPuT8wflqj0b1E9Ct7E/view?usp=sharing]    |
+| MAE-VQGAN (ViT-L) | CVF + IN    | 3400   |   (link)[https://drive.google.com/file/d/130vNSlqg3faHzVGGh_vkeUUh-2uVX3se/view?usp=sharing]   |
