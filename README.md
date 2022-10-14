@@ -103,5 +103,5 @@ The script will save a log.txt file with the results as well as results visualiz
 # Pretrained Models
 | Model             | Pretraining | Epochs | Link |
 |-------------------|-------------|--------|------|
-| MAE-VQGAN (ViT-L) | CVF         | 1000   |  (link)[https://drive.google.com/file/d/1Xe0-cypS4dcwqbPuT8wflqj0b1E9Ct7E/view?usp=sharing]    |
-| MAE-VQGAN (ViT-L) | CVF + IN    | 3400   |   (link)[https://drive.google.com/file/d/130vNSlqg3faHzVGGh_vkeUUh-2uVX3se/view?usp=sharing]   |
+| MAE-VQGAN (ViT-L) | CVF         | 1000   |  [link](https://drive.google.com/file/d/1Xe0-cypS4dcwqbPuT8wflqj0b1E9Ct7E/view?usp=sharing)    |
+| MAE-VQGAN (ViT-L) | CVF + IN    | 3400   |   [link](https://drive.google.com/file/d/130vNSlqg3faHzVGGh_vkeUUh-2uVX3se/view?usp=sharing)   |
