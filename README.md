@@ -84,10 +84,9 @@ cd evaluate && python evaluate_segmentation.py \
     --base_dir <pascal_5i_basedir> \
     --output_dir <outputs_dir> \
     --ckpt <model_ckp_path> \
-    --split <split> \
     --dataset_type pascal_det
 ```
-The script will save a log.txt file with the results as well as results visualization.
+The script will save a log.txt file with the results as well as results visualization. 
 
 ### Evaluate on Colorization:
 ```
