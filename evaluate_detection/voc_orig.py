@@ -66,13 +66,12 @@ DATASET_YEAR_DICT = {
 }
 
 def make_transforms(image_set, imgs_size=224, padding=1):
-
     normalize = T.Compose([
         T.ToTensor(),
         T.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ])
 
-    rec_size = imgs_size//2 - padding
+    rec_size = imgs_size // 2 - padding
     scales = [(rec_size, rec_size)]
 
     if image_set == 'train':
@@ -89,7 +88,6 @@ def make_transforms(image_set, imgs_size=224, padding=1):
         ])
 
     raise ValueError(f'unknown {image_set}')
-
 class VOCDetection(VisionDataset):
     """`Pascal VOC <http://host.robots.ox.ac.uk/pascal/VOC/>`_ Detection Dataset.
     Args:
@@ -128,8 +126,11 @@ class VOCDetection(VisionDataset):
         self.CLASS_NAMES = CLASS_NAMES
         self.MAX_NUM_OBJECTS = 64
         self.no_cats = no_cats
-        self.support_set = torch.load('/shared/amir/dataset/pascal/2012_support_set.pth') # TODO: save in original datapath (PD right now)
-        self.val_flattened_set = torch.load('/shared/amir/dataset/pascal/2012_val_flattened_set.pth')
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        # loading random per class support, randomly chosen from pascal 2012 train partition
+        self.support_set = torch.load(os.path.join(base_dir, '2012_support_set.pth'))
+        # load pascal 2012 val samples that have single object and occupy less than 20% of the image.
+        self.val_flattened_set = torch.load(os.path.join(base_dir, '2012_val_flattened_set.pth'))
 
 
         for year, image_set in zip(years, image_sets):

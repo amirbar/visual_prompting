@@ -3,7 +3,6 @@ from evaluate_detection.voc_orig import VOCDetection as VOCDetectionOrig, make_t
 import cv2
 from evaluate.pascal_dataloader import create_grid_from_images_old as create_grid_from_images
 from PIL import Image
-from evaluate_detection.voc import make_transforms
 from evaluate.mae_utils import *
 from matplotlib import pyplot as plt
 import torch
@@ -101,19 +100,3 @@ class CanvasDataset(data.Dataset):
 
         return {'grid': canvas}
 
-
-if __name__ == "__main__":
-    # model = prepare_model('/shared/amir/Deployment/arxiv_mae/logs_dir/pretrain_small_arxiv2/checkpoint-799.pth',
-    #                       arch='mae_vit_small_patch16')
-
-
-    canvas_ds = CanvasDataset(dataset_train, dataset_val)
-
-    ids_shuffle, len_keep = generate_mask_for_evaluation()
-
-    idx = np.random.choice(np.arange(len(dataset_val)))
-    canvas = canvas_ds[idx]
-    orig_image, im_paste, mask = generate_image(canvas.unsqueeze(0), model, ids_shuffle, len_keep)
-    plt.figure(dpi=256)
-    plt.imshow(torch.clip((im_paste[0].cpu().detach() * imagenet_std + imagenet_mean) * 255, 0, 255).int())
-    plt.show()
