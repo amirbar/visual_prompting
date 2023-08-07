@@ -40,7 +40,7 @@ Download pretrained VQGAN codebook checkpoint and config [_vqgan_imagenet_f16_10
 
 ### Pretrain a model on CVF dataset with 8 V100 gpus:
 ```
-python -m torch.distributed.launch --nproc_per_node=8 python main_pretrain.py --model mae_vit_large_patch16 --input_size 224 --batch_size 64 --mask_ratio 0.75 --warmup_epochs 15 --epochs 1000 --blr 1e-4 --save_ckpt_freq 100 --output_dir logs_dir/maevqgan --data_path <path_to_dataset>
+python -m torch.distributed.launch --nproc_per_node=8 main_pretrain.py --model mae_vit_large_patch16 --input_size 224 --batch_size 64 --mask_ratio 0.75 --warmup_epochs 15 --epochs 1000 --blr 1e-4 --save_ckpt_freq 100 --output_dir logs_dir/maevqgan --data_path <path_to_dataset>
 ```
 
 ## Evaluation
